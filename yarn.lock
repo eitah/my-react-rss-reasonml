@@ -850,6 +850,11 @@ browserify-zlib@^0.2.0:
   dependencies:
     pako "~1.0.5"
 
+bs-onegraph-auth@0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/bs-onegraph-auth/-/bs-onegraph-auth-0.0.5.tgz#66c87ebf659fc5a7d0c3b75e817009b6d181983c"
+  integrity sha512-5Kjxjy1no7mD1IBdECrT9Jbq4q++0lmQ1kB7cnTQP4tPwwPJ+zE413w3Lcx5J151ogrr7CQm39t9CptP7e2A1w==
+
 bs-platform@^5.0.6:
   version "5.0.6"
   resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-5.0.6.tgz#88c13041fb020479800de3d82c680bf971091425"
