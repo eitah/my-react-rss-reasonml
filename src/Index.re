@@ -107,6 +107,8 @@ module UnnamedQuery1 = {
       let errorEl = error->Belt.Option.mapWithDefault(null, jsonify);
 
       <div>
+        <Podcast />
+
         dataEl
         errorEl
         <button
@@ -119,7 +121,7 @@ module UnnamedQuery1 = {
               ->Js.Promise.then_(
                   () => OneGraphAuth.isLoggedIn(Client.auth, serviceName),
                   _,
-                )
+                 )
               ->Js.Promise.then_(
                   loginSuccess =>
                     switch (loginSuccess) {

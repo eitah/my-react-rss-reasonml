@@ -14,9 +14,11 @@ var ApolloLink = require("apollo-link");
 var OneGraphAuth = require("bs-onegraph-auth/src/OneGraphAuth.bs.js");
 var ReasonApollo = require("reason-apollo/src/ReasonApollo.bs.js");
 var OnegraphAuth = require("onegraph-auth");
+var CamlinternalOO = require("bs-platform/lib/js/camlinternalOO.js");
 var ReactHooks = require("@apollo/react-hooks");
 var ApolloInMemoryCache = require("reason-apollo/src/ApolloInMemoryCache.bs.js");
 var Query$ReasonApolloHooks = require("reason-apollo-hooks/src/Query.bs.js");
+var Podcast$ReactHooksTemplate = require("./Podcast.bs.js");
 
 var appId = "17f4cb26-3b30-4828-869a-5410a8b3c4ae";
 
@@ -347,6 +349,12 @@ var UnnamedQuery1Query = Query$ReasonApolloHooks.Make([
       parse
     ]);
 
+var class_tables = [
+  0,
+  0,
+  0
+];
+
 function Index$UnnamedQuery1(Props) {
   var variables = make(/* () */0).variables;
   var match = Curry._8(UnnamedQuery1Query[/* use */0], Caml_option.some(variables), undefined, undefined, /* NetworkOnly */2, /* All */2, undefined, undefined, /* () */0);
@@ -361,7 +369,20 @@ function Index$UnnamedQuery1(Props) {
     };
     var dataEl = Belt_Option.mapWithDefault(full[/* data */0], "No data", jsonify);
     var errorEl = Belt_Option.mapWithDefault(error, null, jsonify);
-    return React.createElement("div", undefined, dataEl, errorEl, React.createElement("button", {
+    if (!class_tables[0]) {
+      var $$class = CamlinternalOO.create_table(0);
+      var env = CamlinternalOO.new_variable($$class, "");
+      var env_init = function (env$1) {
+        var self = CamlinternalOO.create_object_opt(0, $$class);
+        self[env] = env$1;
+        return self;
+      };
+      CamlinternalOO.init_class($$class);
+      class_tables[0] = env_init;
+    }
+    return React.createElement("div", undefined, React.createElement(Podcast$ReactHooksTemplate.make, {
+                    podcast: Curry._1(class_tables[0], 0)
+                  }), dataEl, errorEl, React.createElement("button", {
                     onClick: (function (_event) {
                         var match = OneGraphAuth.findMissingAuthServices(auth, error);
                         if (match) {
